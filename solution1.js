@@ -19,6 +19,6 @@ function studentMarks(mark){
     }
 }
 
-studentMarks(99)
+studentMarks(99) // This is where you input student marks
 
-// console.log(studentMarks(99))
+console.log(studentMarks(99))

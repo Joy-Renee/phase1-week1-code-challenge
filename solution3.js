@@ -1,18 +1,12 @@
 
 // Challenge 3: Net Salary Calculator (Toy Problem)
 
-// function basicSalary(salary){}
-// function allBenefits(benefits){}
+// This function is for calculating NHIF deduction according to your gross salary.
+// First we will subtract the nhIfDeduction from grossmonth (which represents monthly gross salary) then we will subtract taxes (PAYE) in a different function. 
 
-// let grossmonth = salary + benefits
-
-
-//nhIfDeduction(payeTotal);
-//console.log(nhIfDeduction(payeTotal))
-
-function nhIfDeduction(grossmonth){
+function nhIfDeduction(grossmonth){  
     if(grossmonth >= 0 && grossmonth <= 5999){
-       return grossmonth - 150 
+       return grossmonth - 150 // 150 is the NHIF deduction for the specified salary group.
     }
     else if(grossmonth >= 6000 && grossmonth <= 7999){
         return grossmonth - 300
@@ -64,42 +58,34 @@ function nhIfDeduction(grossmonth){
     }
     
 }
-
-
-
+// In this second function we'll calculate the net salary by subtracting the tax percentage by 100% in order to remain with the net salary percentage, then we'll multiply it by the deductions variable
 
 function payeTotal(nhIfDeduction){
     if( nhIfDeduction <= 24000 ){
-        return deductions * 0.1
+        return deductions * 0.9  // tax is 10% and 100 - 10 is equal to 90% which is equal to 0.9 
    }
-   else if( nhIfDeduction >= 24001 && grossmonth <= 32333 ){
-    return deductions * 0.25
+   else if( nhIfDeduction >= 24001 && nhIfDeduction <= 32333 ){
+    return deductions * 0.75   // tax is 25% and 100 - 25 is equal to 75% which is equal to 0.75
    }
-   else if(nhIfDeduction >= 32334 && grossmonth <= 500000 ){
-    return deductions * 0.3
+   else if(nhIfDeduction >= 32334 && nhIfDeduction <= 500000 ){
+    return deductions * 0.7   // tax is 30% and 100 - 30 is equal to 70% which is equal to 0.7
    }
-   else if(nhIfDeduction >= 500001 && grossmonth <= 800000 ){
-    return deductions * 0.325
+   else if(nhIfDeduction >= 500001 && nhIfDeduction <= 800000 ){
+    return deductions * 0.675  // tax is 32.5% and 100 - 32.5 is equal to 67.5% which is equal to 0.675
    }
    else if(nhIfDeduction > 800000 ){
-    return deductions * 0.35
+    return deductions * 0.65  // tax is 35% and 100 - 35 is equal to 65% which is equal to 0.65
    }
 
 }
 
-console.log(nhIfDeduction(5000))
+ 
+let deductions = nhIfDeduction(18000) // this is where you input your gross salary. Then the code will run and output your net salary. 
+// console.log(deductions)
+console.log(payeTotal(deductions)) // this is where you get your net salary
 
-let deductions = nhIfDeduction(5000)
-
-console.log(payeTotal(5000))
 
 
-function netSalary(nhIfDeduction, payeTotal){
-    let resulsts = nhIfDeduction() - payeTotal()
-    return resulsts
-} 
-
-console.log(netSalary())
 
 
 // console.log(`Input your basic salary here ${basicSalary()}`)

@@ -46,6 +46,6 @@ function inputSpeed(speed){
     }
 }
 
-inputSpeed(130)
+inputSpeed(130) // This is where you input the speed
 
-//console.log(inputSpeed(130))
+console.log(inputSpeed(130))
